@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2dd4bf; 
+    border-radius: 4px; 
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px; 
+}
