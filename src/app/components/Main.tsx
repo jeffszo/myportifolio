@@ -24,11 +24,17 @@ const timelineEvents: TimelineEvent[] = [
     icon: <Map strokeWidth={1} className="w-8 h-8 text-teal-400" />
   },
   {
-    date: "2024",
+    date: "2024-2025",
     title: "Desenvolvedor front-end",
     description: "Atuando como desenvolvedor front-end",
     icon: <Map strokeWidth={1} className="w-8 h-8 text-teal-400" />
-  }
+  },
+  // {
+  //   date: "2024",
+  //   title: "Analista de Sistemas",
+  //   description: "Analista de Dados utilizando Power BI e Python",
+  //   icon: <Map strokeWidth={1} className="w-8 h-8 text-teal-400" />
+  // }
 ];
 
 export default function Main() {
@@ -38,10 +44,10 @@ export default function Main() {
         <section id="sobre" className="mb-16 mt-36 sm:mb-24 lg:mb-32">
           <div className="flex flex-col items-center">
             <Fade cascade damping={0.1} className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 text-center">Jeferson Ferreira</Fade>
-            <Fade cascade damping={0.1} className="text-lg sm:text-xl text-teal-400 text-center mb-6">Desenvolvedor Frontend & ADS</Fade>
+            <Fade cascade damping={0.1} className="text-lg sm:text-xl text-teal-400 text-center mb-6">Desenvolvedor Frontend & Analista de Sistemas</Fade>
          
             <div className="mb-6 text-center w-full sm:w-3/4 lg:w-1/2">
-              <p className="text-sm sm:text-base"> Criando experiências digitais intuitivas e visualmente atraentes há mais de 5 anos. Minha paixão está em transformar ideias complexas em interfaces simples e elegantes que encantam os usuários. </p> 
+              <p className="text-sm sm:text-base"> Criando experiências digitais intuitivas e visualmente atraentes há mais de 2 anos. Minha paixão está em transformar ideias complexas em interfaces simples e elegantes que encantam os usuários. </p> 
             </div>
 
             <Fade>
@@ -88,15 +94,16 @@ export default function Main() {
               <p className="text-sm sm:text-base">React, Typescript e Next.js</p>
             </div>
             <div className="p-4 sm:p-6 rounded-lg border border-gray-800">
-              <Database strokeWidth={1} className="h-8 w-8 text-teal-400 mb-4" />
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">Análise de dados</h3>
-              <p className="text-sm sm:text-base">Python, Power BI e SQL</p>
+              <FolderCode strokeWidth={1} className="h-8 w-8 text-teal-400 mb-4" />
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">Mobile</h3>
+              <p className="text-sm sm:text-base">React Native e Supabase</p>
             </div>
             <div className="p-4 sm:p-6 rounded-lg border border-gray-800">
-              <FolderCode strokeWidth={1} className="h-8 w-8 text-teal-400 mb-4" />
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">Back-end</h3>
-              <p className="text-sm sm:text-base">Ruby e Ruby On Rails</p>
+              <Database strokeWidth={1} className="h-8 w-8 text-teal-400 mb-4" />
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">Análise de dados</h3>
+              <p className="text-sm sm:text-base">Python, Power BI e SQL Server</p>
             </div>
+
           </div>
         </section>
 
@@ -125,10 +132,10 @@ export default function Main() {
                 link: '#'
               },
               {
-                title: 'Redesign de Site Corporativo',
+                title: 'SoftFlow',
                 description: 'Modernização da presença online de uma empresa de tecnologia.',
-                tech: ['Figma', 'WordPress', 'SCSS'],
-                link: '#'
+                tech: ['React', 'Styled Components'],
+                link: 'https://softflow.vercel.app/'
               },
               {
                 title: 'Dashboard Analítico',
@@ -162,17 +169,17 @@ export default function Main() {
         </section>
 
         <section id="contato" className="text-center">
-          <h2 className="text-xl sm:text-2xl font-semibold mb-2">Contato</h2>
-          <div className="p-4 sm:p-8 rounded-lg flex flex-col items-center transition-colors">
+          <h2 className="text-xl sm:text-2xl font-semibold ">Contato</h2>
+          <div className="p-2 sm:p-8 rounded-lg flex flex-col items-center transition-colors">
             <p className="text-sm sm:text-base mb-4">Interessado em trabalharmos juntos? Entre em contato!</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="mailto:jefersonferreira27@outlook.com" className="inline-flex items-center text-teal-400 hover:text-teal-600 text-sm sm:text-base">
                 <Mail strokeWidth={1} className="mr-2 h-5 w-5" /> jefersonferreira27@outlook.com
               </a>
-              <a href="https://github.com/joaosilva" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-400 hover:text-teal-600 text-sm sm:text-base">
+              <a href="https://github.com/jeffszo" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-400 hover:text-teal-600 text-sm sm:text-base">
                 <Github strokeWidth={1} className="mr-2 h-5 w-5" /> GitHub 
               </a>
-              <a href="https://linkedin.com/in/joaosilva" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-400 hover:text-teal-600 text-sm sm:text-base">
+              <a href="https://www.linkedin.com/in/jefersonf7/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal-400 hover:text-teal-600 text-sm sm:text-base">
                 <Linkedin strokeWidth={1} className="mr-2 h-5 w-5" /> LinkedIn
               </a>
             </div>

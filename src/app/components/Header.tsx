@@ -28,7 +28,7 @@ export default function Header() {
         </button>
       </div>
       {isMenuOpen && (
-        <nav className="md:hidden bg-gray-800 p-4">
+        <nav className="md:hidden bg-gray-900 p-4">
           <a href="#sobre" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>Sobre</a>
           <a href="#habilidades" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>Habilidades</a>
           <a href="#projetos" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>Projetos</a>
