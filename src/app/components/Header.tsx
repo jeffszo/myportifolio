@@ -2,37 +2,106 @@
 
 import { Code, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const translations = {
+    pt: {
+      about: 'Sobre',
+      skills: 'Habilidades',
+      projects: 'Projetos',
+      contact: 'Contato',
+    },
+    en: {
+      about: 'About',
+      skills: 'Skills',
+      projects: 'Projects',
+      contact: 'Contact',
+    },
+  };
+
+  const t = translations[language];
+
   return (
     <header className="w-full bg-gray-900 border-b text-gray-100 border-gray-800 z-10 fixed top-0">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold text-teal-600 flex items-center">
-          <Code strokeWidth={1} className="w-8 h-8 text-teal-400 ml-6 " />
-          {/* <span className="hidden sm:inline">Jeferson Ferreira</span> */}
+          <Code strokeWidth={1} className="w-8 h-8 text-teal-400 ml-6" />
         </h1>
+
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#sobre" className="hover:text-teal-400 transition-colors">Sobre</a>
-          <a href="#habilidades" className="hover:text-teal-400 transition-colors">Habilidades</a>
-          <a href="#projetos" className="hover:text-teal-400 transition-colors">Projetos</a>
-          <a href="#contato" className="hover:text-teal-400 transition-colors">Contato</a>
+          <a href="#sobre" className="hover:text-teal-400 transition-colors">{t.about}</a>
+          <a href="#habilidades" className="hover:text-teal-400 transition-colors">{t.skills}</a>
+          <a href="#projetos" className="hover:text-teal-400 transition-colors">{t.projects}</a>
+          <a href="#contato" className="hover:text-teal-400 transition-colors">{t.contact}</a>
+
+          <div className="flex items-center border border-gray-700 rounded-full overflow-hidden ml-4">
+            <button
+              onClick={() => setLanguage('pt')}
+              className={`px-3 py-1 text-sm transition-colors ${
+                language === 'pt'
+                  ? 'bg-teal-500 text-white'
+                  : 'bg-transparent text-gray-300'
+              }`}
+            >
+              PT
+            </button>
+
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-1 text-sm transition-colors ${
+                language === 'en'
+                  ? 'bg-teal-500 text-white'
+                  : 'bg-transparent text-gray-300'
+              }`}
+            >
+              EN
+            </button>
+          </div>
         </nav>
+
         <button onClick={toggleMenu} className="md:hidden text-teal-400">
           {isMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
+
       {isMenuOpen && (
-        <nav className="md:hidden bg-gray-900 p-4">
-          <a href="#sobre" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>Sobre</a>
-          <a href="#habilidades" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>Habilidades</a>
-          <a href="#projetos" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>Projetos</a>
-          <a href="#contato" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>Contato</a>
+        <nav className="md:hidden bg-gray-900 p-4 flex flex-col gap-2">
+          <a href="#sobre" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>{t.about}</a>
+          <a href="#habilidades" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>{t.skills}</a>
+          <a href="#projetos" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>{t.projects}</a>
+          <a href="#contato" className="block py-2 hover:text-teal-400 transition-colors" onClick={toggleMenu}>{t.contact}</a>
+
+          <div className="flex items-center border border-gray-700 rounded-full overflow-hidden w-fit mt-4">
+            <button
+              onClick={() => setLanguage('pt')}
+              className={`px-3 py-1 text-sm transition-colors ${
+                language === 'pt'
+                  ? 'bg-teal-500 text-white'
+                  : 'bg-transparent text-gray-300'
+              }`}
+            >
+              PT
+            </button>
+
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-1 text-sm transition-colors ${
+                language === 'en'
+                  ? 'bg-teal-500 text-white'
+                  : 'bg-transparent text-gray-300'
+              }`}
+            >
+              EN
+            </button>
+          </div>
         </nav>
       )}
     </header>

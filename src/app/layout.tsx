@@ -1,6 +1,10 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { Metadata } from "next";
 import { Exo } from 'next/font/google'
+// @ts-ignore
 import "./globals.css";
+import { LanguageProvider } from './context/LanguageContext';
+
 
 const exo = Exo({ subsets: ['latin'] })
 
@@ -19,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br" >
       <body className={exo.className}>
-        {children}
+               <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
