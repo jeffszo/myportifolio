@@ -37,7 +37,6 @@ export default function Projects() {
             <div className="space-y-3">
               <h3 className="text-xl sm:text-2xl font-extrabold">{featured.title}</h3>
               <p className="text-sm text-gray-400">{featured.description}</p>
-              <p className="text-sm text-gray-400 border-l-2 border-line pl-3">{featured.result}</p>
             </div>
 
             <div className="flex flex-wrap gap-2">
