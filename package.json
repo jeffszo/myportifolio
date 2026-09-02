@@ -1,24 +1,20 @@
 {
   "name": "myportifolio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "description": "Portfolio de Jeferson Ferreira - Software Engineer (React, Next.js, Node.js, Java, Supabase)",
+  "author": "Jeferson Ferreira",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint" 
+    "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.3",
-    "@react-three/drei": "^9.0.1",
-    "@react-three/fiber": "^8.17.9",
     "lucide-react": "^0.446.0",
-    "myportifolio": "file:",
     "next": "^14.2.13",
     "react": "^18",
-    "react-awesome-reveal": "^4.2.14",
-    "react-dom": "^18",
-    "tsparticles": "^3.5.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20.16.10",
