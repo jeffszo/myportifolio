@@ -30,7 +30,6 @@ export interface FlowStep {
 export interface Project {
   title: string;
   description: string;
-  result: string;
   image: string;
   tech: string[];
   link: string;
@@ -192,8 +191,6 @@ export const content: Record<Language, SiteContent> = {
           title: 'Portal de Cadastro de Clientes',
           description:
             'Portal corporativo para onboarding e cadastro de clientes com fluxo de aprovação entre múltiplos departamentos.',
-          result:
-            'Sistema com validação entre os times de Wholesale, Credit, Tax e CSC. Modelei a autenticação e as políticas de acesso (RLS) no Supabase para que cada time visualizasse apenas os dados sob sua responsabilidade.',
           image: '/projects/farm.png',
           tech: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Styled Components'],
           link: 'https://customer.farmrio.com/',
@@ -203,7 +200,6 @@ export const content: Record<Language, SiteContent> = {
           title: 'SoftFlow',
           description:
             'Website institucional moderno para fortalecer a presença online de uma empresa de tecnologia.',
-          result: 'Design limpo, responsivo e com navegação objetiva.',
           image: '/projects/softflow.png',
           tech: ['React', 'Styled Components'],
           link: 'https://softflow.vercel.app/',
@@ -211,7 +207,6 @@ export const content: Record<Language, SiteContent> = {
         {
           title: 'New Era',
           description: 'Landing Page para uma agência de tecnologia.',
-          result: 'Estrutura criada para conversão e comunicação clara da oferta.',
           image: '/projects/new.png',
           tech: ['React', 'Next.js', 'Tailwind CSS'],
           link: 'https://new-era-chi.vercel.app/',
@@ -220,7 +215,6 @@ export const content: Record<Language, SiteContent> = {
           title: 'Apenas um Show',
           description:
             'Criado para apresentar personagens, identidade visual e conteúdos nostálgicos da animação, feito para um fã',
-          result: 'Foco em interface criativa, layout responsivo e experiência visual imersiva.',
           image: '/projects/regular.png',
           tech: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript'],
           link: 'https://regularshow.vercel.app/',
@@ -333,8 +327,6 @@ export const content: Record<Language, SiteContent> = {
           title: 'Customer Onboarding Portal',
           description:
             'Corporate portal for customer onboarding and registration with a multi-step approval workflow between departments.',
-          result:
-            'Validation flow between Wholesale, Credit, Tax and CSC teams. I modeled authentication and access policies (RLS) in Supabase so each team only sees the data it owns.',
           image: '/projects/farm.png',
           tech: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Styled Components'],
           link: 'https://customer.farmrio.com/',
@@ -343,7 +335,6 @@ export const content: Record<Language, SiteContent> = {
         {
           title: 'SoftFlow',
           description: 'Modern institutional website to strengthen a technology company online presence.',
-          result: 'Clean, responsive design with objective navigation.',
           image: '/projects/softflow.png',
           tech: ['React', 'Styled Components'],
           link: 'https://softflow.vercel.app/',
@@ -351,7 +342,6 @@ export const content: Record<Language, SiteContent> = {
         {
           title: 'New Era',
           description: 'Landing Page for a technology agency.',
-          result: 'Structure created for conversion and clear communication of the offer.',
           image: '/projects/new.png',
           tech: ['React', 'Next.js', 'Tailwind CSS'],
           link: 'https://new-era-chi.vercel.app/',
@@ -360,8 +350,6 @@ export const content: Record<Language, SiteContent> = {
           title: 'Regular Show',
           description:
             'Fan-made website inspired by Cartoon Network’s Regular Show, created to showcase characters, visual identity and nostalgic content.',
-          result:
-            'Focused on creative UI, responsive layout and a playful visual experience for fans.',
           image: '/projects/regular.png',
           tech: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript'],
           link: 'https://regularshow.vercel.app/',
