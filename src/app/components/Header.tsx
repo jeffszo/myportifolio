@@ -3,6 +3,7 @@
 import { Code, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { content } from '../data/content';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,22 +13,7 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const translations = {
-    pt: {
-      about: 'Sobre',
-      skills: 'Habilidades',
-      projects: 'Projetos',
-      contact: 'Contato',
-    },
-    en: {
-      about: 'About',
-      skills: 'Skills',
-      projects: 'Projects',
-      contact: 'Contact',
-    },
-  };
-
-  const t = translations[language];
+  const t = content[language].nav;
 
   return (
     <header className="w-full bg-gray-900 border-b text-gray-100 border-gray-800 z-10 fixed top-0">
@@ -45,6 +31,7 @@ export default function Header() {
           <div className="flex items-center border border-gray-700 rounded-full overflow-hidden ml-4">
             <button
               onClick={() => setLanguage('pt')}
+              aria-pressed={language === 'pt'}
               className={`px-3 py-1 text-sm transition-colors ${
                 language === 'pt'
                   ? 'bg-teal-500 text-white'
@@ -56,6 +43,7 @@ export default function Header() {
 
             <button
               onClick={() => setLanguage('en')}
+              aria-pressed={language === 'en'}
               className={`px-3 py-1 text-sm transition-colors ${
                 language === 'en'
                   ? 'bg-teal-500 text-white'
@@ -67,7 +55,12 @@ export default function Header() {
           </div>
         </nav>
 
-        <button onClick={toggleMenu} className="md:hidden text-teal-400">
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-teal-400"
+          aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={isMenuOpen}
+        >
           {isMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
@@ -82,6 +75,7 @@ export default function Header() {
           <div className="flex items-center border border-gray-700 rounded-full overflow-hidden w-fit mt-4">
             <button
               onClick={() => setLanguage('pt')}
+              aria-pressed={language === 'pt'}
               className={`px-3 py-1 text-sm transition-colors ${
                 language === 'pt'
                   ? 'bg-teal-500 text-white'
@@ -93,6 +87,7 @@ export default function Header() {
 
             <button
               onClick={() => setLanguage('en')}
+              aria-pressed={language === 'en'}
               className={`px-3 py-1 text-sm transition-colors ${
                 language === 'en'
                   ? 'bg-teal-500 text-white'
