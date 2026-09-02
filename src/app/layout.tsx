@@ -1,17 +1,18 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { Metadata } from "next";
-import { Exo } from 'next/font/google'
-// @ts-ignore
+import { Poppins } from 'next/font/google'
 import "./globals.css";
 import { LanguageProvider } from './context/LanguageContext';
 
-
-const exo = Exo({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+})
 
 const siteUrl = 'https://jefersonferreira.vercel.app';
-const title = 'Jeferson Ferreira | Full Stack Developer';
+const title = 'Jeferson Ferreira | Software Engineer';
 const description =
-  'Full Stack Developer especializado em React, Next.js, TypeScript, Node.js e Supabase. Interfaces modernas de ponta a ponta, com APIs, banco de dados e autenticação.';
+  'Software Engineer especializado em React, Next.js, TypeScript, Node.js, Java e Supabase. Interfaces modernas de ponta a ponta, com APIs, banco de dados e autenticação.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -22,11 +23,13 @@ export const metadata: Metadata = {
   description,
   keywords: [
     'Jeferson Ferreira',
+    'Software Engineer',
     'Full Stack Developer',
     'React',
     'Next.js',
     'TypeScript',
     'Node.js',
+    'Java',
     'Supabase',
     'Desenvolvedor Full Stack',
   ],
@@ -55,11 +58,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
-    <html lang="pt-br" >
-      <body className={exo.className}>
-               <LanguageProvider>
+    <html lang="pt-br">
+      <body className={poppins.className}>
+        <LanguageProvider>
           {children}
         </LanguageProvider>
       </body>

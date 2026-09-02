@@ -18,7 +18,13 @@ export interface Service {
 export interface SkillCategory {
   title: string;
   icon: React.ReactNode;
-  items: string;
+  items: string[];
+}
+
+export interface FlowStep {
+  label: string;
+  description: string;
+  icon: React.ReactNode;
 }
 
 export interface Project {
@@ -28,12 +34,7 @@ export interface Project {
   image: string;
   tech: string[];
   link: string;
-}
-
-export interface TimelineItem {
-  date: string;
-  title: string;
-  description: string;
+  featured?: boolean;
 }
 
 export interface NavContent {
@@ -44,24 +45,35 @@ export interface NavContent {
 }
 
 export interface HomeContent {
+  badgeAvailable: string;
+  badgeRole: string;
   role: string;
   hero: string;
   talk: string;
+  viewProjects: string;
+  stackFlowTitle: string;
+  stackFlowSteps: FlowStep[];
+
   about: string;
   who: string;
-  aboutText: string;
+  aboutText: string[];
+
   services: string;
   servicesSubtitle: string;
   servicesList: Service[];
+
   skills: string;
   skillsSubtitle: string;
   skillCategories: SkillCategory[];
+
   projects: string;
   projectsSubtitle: string;
   seeProject: string;
+  featuredTag: string;
+
   contact: string;
   contactText: string;
-  timeline: TimelineItem[];
+
   projectsList: Project[];
 }
 
@@ -72,6 +84,7 @@ export interface SiteContent {
 }
 
 const iconClass = 'h-8 w-8 text-teal-400 mb-4';
+const badgeIconClass = 'h-[18px] w-[18px]';
 
 export const content: Record<Language, SiteContent> = {
   pt: {
@@ -85,14 +98,39 @@ export const content: Record<Language, SiteContent> = {
       rights: 'Todos os direitos reservados.',
     },
     home: {
-      role: 'Full Stack Developer (Pleno) | React • Next.js • Node.js • TypeScript • Supabase',
+      badgeAvailable: 'Disponível para novos projetos',
+      badgeRole: 'Software Engineer @ FARM RIO',
+      role: 'Software Engineer',
       hero: 'Desenvolvo produtos web de ponta a ponta: interfaces modernas em React e Next.js integradas a APIs, bancos de dados e autenticação — com foco em performance, escalabilidade e experiência do usuário.',
-      talk: 'Vamos trabalhar juntos',
+      talk: 'Vamos conversar',
+      viewProjects: 'Ver projetos',
+
+      stackFlowTitle: 'Como eu entrego um produto',
+      stackFlowSteps: [
+        {
+          label: 'Front-end',
+          description: 'React · Next.js · TypeScript · Tailwind',
+          icon: <Code2 strokeWidth={1.5} className={badgeIconClass} />,
+        },
+        {
+          label: 'Back-end',
+          description: 'Node.js · Java · APIs REST · Auth',
+          icon: <Server strokeWidth={1.5} className={badgeIconClass} />,
+        },
+        {
+          label: 'Dados',
+          description: 'Supabase · PostgreSQL · RLS',
+          icon: <Database strokeWidth={1.5} className={badgeIconClass} />,
+        },
+      ],
 
       about: 'Sobre',
       who: 'Quem sou',
-      aboutText:
-        'Olá, meu nome é Jeferson Ferreira de Souza. Sou formado em Análise e Desenvolvimento de Sistemas e atuo como desenvolvedor full stack: construo interfaces com React, Next.js, TypeScript e Tailwind CSS, e cuido também da camada de back-end com Node.js, APIs REST e Supabase (autenticação, banco de dados, storage e políticas de RLS). Também tenho experiência com mobile usando React Native.',
+      aboutText: [
+        'Olá, meu nome é Jeferson Ferreira de Souza. Sou formado em Análise e Desenvolvimento de Sistemas e atuo como desenvolvedor full stack.',
+        'Construo interfaces com React, Next.js, TypeScript e Tailwind CSS, e cuido também da camada de back-end com Node.js, Java, APIs REST e Supabase — autenticação, banco de dados, storage e políticas de RLS.',
+        'Também tenho experiência com mobile usando React Native.',
+      ],
 
       services: 'Serviços',
       servicesSubtitle: 'Como posso ajudar seu projeto',
@@ -106,7 +144,7 @@ export const content: Record<Language, SiteContent> = {
         {
           title: 'APIs & Back-end',
           description:
-            'Modelagem de banco de dados, autenticação e APIs REST com Node.js e Supabase.',
+            'Modelagem de banco de dados, autenticação e APIs REST com Node.js, Java e Supabase.',
           icon: <Server strokeWidth={1} className={iconClass} />,
         },
         {
@@ -127,50 +165,27 @@ export const content: Record<Language, SiteContent> = {
         {
           title: 'Front-end',
           icon: <FolderCode strokeWidth={1} className={iconClass} />,
-          items: 'React, TypeScript, Next.js e Tailwind CSS',
+          items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
         },
         {
           title: 'Back-end',
           icon: <Server strokeWidth={1} className={iconClass} />,
-          items: 'Node.js, APIs REST e Supabase (Auth, DB, Storage, RLS)',
+          items: ['Node.js', 'Java', 'APIs REST', 'Supabase', 'RLS'],
         },
         {
           title: 'Mobile',
           icon: <Smartphone strokeWidth={1} className={iconClass} />,
-          items: 'React Native',
-        },
-        {
-          title: 'Análise de Dados',
-          icon: <Database strokeWidth={1} className={iconClass} />,
-          items: 'Python, Power BI e SQL Server',
+          items: ['React Native'],
         },
       ],
 
       projects: 'Projetos',
       projectsSubtitle: 'Projetos selecionados que mostram minha experiência prática',
       seeProject: 'Ver projeto',
+      featuredTag: 'FULL STACK · PROJETO EM DESTAQUE',
 
       contact: 'Contato',
-      contactText: 'Tem um projeto em mente? Vamos conversar.',
-
-      timeline: [
-        {
-          date: '2022',
-          title: 'Início da jornada',
-          description: 'Comecei a aprender HTML, CSS e JavaScript e iniciei ADS',
-        },
-        {
-          date: '2023',
-          title: 'Estágio - Mitikas',
-          description: 'Responsável pela recriação de app estudantil',
-        },
-        {
-          date: '2024-2026',
-          title: 'Desenvolvedor front-end na FARM RIO',
-          description:
-            'Atuando como desenvolvedor front-end e ampliando atuação para integrações de back-end com Node.js e Supabase.',
-        },
-      ],
+      contactText: 'Tem um projeto em mente? Vamos conversar sobre como posso ajudar, do front-end ao back-end.',
 
       projectsList: [
         {
@@ -182,6 +197,7 @@ export const content: Record<Language, SiteContent> = {
           image: '/projects/farm.png',
           tech: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Styled Components'],
           link: 'https://customer.farmrio.com/',
+          featured: true,
         },
         {
           title: 'SoftFlow',
@@ -224,14 +240,39 @@ export const content: Record<Language, SiteContent> = {
       rights: 'All rights reserved.',
     },
     home: {
-      role: 'Full Stack Developer (Mid-level) | React • Next.js • Node.js • TypeScript • Supabase',
+      badgeAvailable: 'Available for new projects',
+      badgeRole: 'Software Engineer @ FARM RIO',
+      role: 'Software Engineer',
       hero: 'I build web products end to end: modern interfaces in React and Next.js wired up to APIs, databases and authentication — with a focus on performance, scalability and user experience.',
-      talk: "Let's work together",
+      talk: "Let's talk",
+      viewProjects: 'View projects',
+
+      stackFlowTitle: 'How I ship a product',
+      stackFlowSteps: [
+        {
+          label: 'Front-end',
+          description: 'React · Next.js · TypeScript · Tailwind',
+          icon: <Code2 strokeWidth={1.5} className={badgeIconClass} />,
+        },
+        {
+          label: 'Back-end',
+          description: 'Node.js · Java · REST APIs · Auth',
+          icon: <Server strokeWidth={1.5} className={badgeIconClass} />,
+        },
+        {
+          label: 'Data',
+          description: 'Supabase · PostgreSQL · RLS',
+          icon: <Database strokeWidth={1.5} className={badgeIconClass} />,
+        },
+      ],
 
       about: 'About',
       who: 'Who I am',
-      aboutText:
-        'Hello, my name is Jeferson Ferreira de Souza. I have a degree in Systems Analysis and Development and work as a full stack developer: I build interfaces with React, Next.js, TypeScript and Tailwind CSS, and also own the back-end layer with Node.js, REST APIs and Supabase (authentication, database, storage and RLS policies). I also have experience with mobile development using React Native.',
+      aboutText: [
+        'Hello, my name is Jeferson Ferreira de Souza. I have a degree in Systems Analysis and Development and work as a full stack developer.',
+        'I build interfaces with React, Next.js, TypeScript and Tailwind CSS, and also own the back-end layer with Node.js, Java, REST APIs and Supabase — authentication, database, storage and RLS policies.',
+        'I also have experience with mobile development using React Native.',
+      ],
 
       services: 'Services',
       servicesSubtitle: 'How I can help your project',
@@ -244,7 +285,7 @@ export const content: Record<Language, SiteContent> = {
         },
         {
           title: 'APIs & Back-end',
-          description: 'Database modeling, authentication and REST APIs with Node.js and Supabase.',
+          description: 'Database modeling, authentication and REST APIs with Node.js, Java and Supabase.',
           icon: <Server strokeWidth={1} className={iconClass} />,
         },
         {
@@ -265,50 +306,27 @@ export const content: Record<Language, SiteContent> = {
         {
           title: 'Front-end',
           icon: <FolderCode strokeWidth={1} className={iconClass} />,
-          items: 'React, TypeScript, Next.js and Tailwind CSS',
+          items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
         },
         {
           title: 'Back-end',
           icon: <Server strokeWidth={1} className={iconClass} />,
-          items: 'Node.js, REST APIs and Supabase (Auth, DB, Storage, RLS)',
+          items: ['Node.js', 'Java', 'REST APIs', 'Supabase', 'RLS'],
         },
         {
           title: 'Mobile',
           icon: <Smartphone strokeWidth={1} className={iconClass} />,
-          items: 'React Native',
-        },
-        {
-          title: 'Data Analysis',
-          icon: <Database strokeWidth={1} className={iconClass} />,
-          items: 'Python, Power BI and SQL Server',
+          items: ['React Native'],
         },
       ],
 
       projects: 'Projects',
       projectsSubtitle: 'Selected projects that show my hands-on experience',
       seeProject: 'View project',
+      featuredTag: 'FULL STACK · FEATURED PROJECT',
 
       contact: 'Contact',
-      contactText: 'Have a project in mind? Let’s talk.',
-
-      timeline: [
-        {
-          date: '2022',
-          title: 'Beginning of the journey',
-          description: 'Started learning HTML, CSS and JavaScript and began Systems Analysis degree',
-        },
-        {
-          date: '2023',
-          title: 'Internship - Mitikas',
-          description: 'Responsible for rebuilding a student app',
-        },
-        {
-          date: '2024-2026',
-          title: 'Frontend Developer at FARM RIO',
-          description:
-            'Working as a front-end developer and expanding into back-end integrations with Node.js and Supabase.',
-        },
-      ],
+      contactText: "Have a project in mind? Let's talk about how I can help, from front-end to back-end.",
 
       projectsList: [
         {
@@ -320,6 +338,7 @@ export const content: Record<Language, SiteContent> = {
           image: '/projects/farm.png',
           tech: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Styled Components'],
           link: 'https://customer.farmrio.com/',
+          featured: true,
         },
         {
           title: 'SoftFlow',
