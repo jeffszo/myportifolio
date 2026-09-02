@@ -29,16 +29,18 @@ export default function Projects() {
             />
           </div>
 
-          <div className="p-6 sm:p-9">
-            <span className="inline-block text-[11px] font-bold text-ink bg-gradient-to-r from-teal-400 to-indigo-400 px-2.5 py-1 rounded-full mb-3.5">
+          <div className="p-6 sm:p-9 flex flex-col gap-5">
+            <span className="inline-block w-fit text-[11px] font-bold text-ink bg-gradient-to-r from-teal-400 to-indigo-400 px-2.5 py-1 rounded-full">
               {text.featuredTag}
             </span>
 
-            <h3 className="text-xl sm:text-2xl font-extrabold mb-2.5">{featured.title}</h3>
-            <p className="text-sm text-gray-400 mb-3.5">{featured.description}</p>
-            <p className="text-sm text-teal-400 border-l-2 border-teal-400 pl-3 mb-4.5">{featured.result}</p>
+            <div className="space-y-3">
+              <h3 className="text-xl sm:text-2xl font-extrabold">{featured.title}</h3>
+              <p className="text-sm text-gray-400">{featured.description}</p>
+              <p className="text-sm text-gray-400 border-l-2 border-line pl-3">{featured.result}</p>
+            </div>
 
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2">
               {featured.tech.map((tech) => (
                 <span
                   key={tech}
@@ -53,7 +55,7 @@ export default function Projects() {
               href={featured.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sm font-bold text-teal-400 hover:text-teal-300"
+              className="inline-flex items-center w-fit text-sm font-bold text-teal-400 hover:text-teal-300"
             >
               {text.seeProject}
               <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
